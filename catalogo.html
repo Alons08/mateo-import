@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo | Mateo Import. — Dijes, Aretes, Aretes Modelo y Pulseras</title>
+  <meta name="description" content="Explora el catálogo completo de Mateo Import. Filtra por dijes, aretes, aretes modelo o pulseras, busca por nombre y realiza tu pedido directo por WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Mateo Import. Inicio">
+        <img src="assets/img/logo.png" alt="Logo Mateo Import." class="brand-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Mateo Import.</span>
+          <span class="brand-tagline">Accesorios &amp; Joyería</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="catalogo.html" class="active">Catálogo</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="politicas.html">Políticas</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="cart-trigger" aria-label="Abrir carrito de compras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-trigger-label">Carrito</span>
+          <span class="cart-badge">0</span>
+        </button>
+
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html" class="active">Catálogo</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="politicas.html">Políticas y Condiciones</a>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Colección Completa</span>
+        <h1 class="section-title">Catálogo de Accesorios</h1>
+        <p class="section-subtitle">
+          Filtra por categoría o busca tu pieza favorita por nombre. Selecciona la cantidad deseada y agrégala a tu carrito para enviar tu pedido por WhatsApp.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 24px;">
+      <div class="container">
+        <!-- Toolbar: Búsqueda + Ordenar + Filtros -->
+        <div class="catalog-toolbar">
+          <div class="catalog-toolbar-top">
+            <div class="search-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input
+                type="search"
+                id="catalogSearch"
+                class="search-input"
+                placeholder="Buscar por nombre (ej. perlas, corazón, argollas...)"
+                aria-label="Buscar productos por nombre"
+              />
+              <button type="button" id="catalogSearchClear" class="search-clear" aria-label="Limpiar búsqueda">&times;</button>
+            </div>
+
+            <select id="catalogSort" class="sort-select" aria-label="Ordenar productos">
+              <option value="featured">Ordenar: Destacados</option>
+              <option value="price-asc">Precio: Menor a mayor</option>
+              <option value="price-desc">Precio: Mayor a menor</option>
+              <option value="name-asc">Nombre: A – Z</option>
+            </select>
+          </div>
+
+          <div class="catalog-toolbar-bottom">
+            <div class="filter-buttons" role="group" aria-label="Filtrar por categoría">
+              <button type="button" class="filter-btn active" data-category="todos">Todos</button>
+              <button type="button" class="filter-btn" data-category="dijes">Dijes</button>
+              <button type="button" class="filter-btn" data-category="aretes">Aretes</button>
+              <button type="button" class="filter-btn" data-category="aretes-modelo">Aretes Modelo</button>
+              <button type="button" class="filter-btn" data-category="pulseras">Pulseras</button>
+            </div>
+            <div class="results-count" id="catalogResultsCount">Mostrando accesorios</div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="catalogProductsGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">Mateo Import.</div>
+          <p class="footer-desc">
+            Accesorios cuidadosamente seleccionados: dijes, aretes, aretes modelo y pulseras con estética minimalista y atemporal.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="politicas.html">Políticas y Condiciones</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Categorías</h4>
+          <ul>
+            <li><a href="catalogo.html?categoria=dijes">Dijes</a></li>
+            <li><a href="catalogo.html?categoria=aretes">Aretes</a></li>
+            <li><a href="catalogo.html?categoria=aretes-modelo">Aretes Modelo</a></li>
+            <li><a href="catalogo.html?categoria=pulseras">Pulseras</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tiendas y Contacto</h4>
+          <ul>
+            <li><strong>Galería Cusco:</strong> Jr. Cusco 716, Tdas. 216 y 225 — Cercado de Lima</li>
+            <li><strong>Galería Mercado Central:</strong> Jr. Cusco 640, Tda. 1116 — Cercado de Lima</li>
+            <li>WhatsApp: <a href="https://wa.me/51931088900" target="_blank" rel="noopener noreferrer">+51 931 088 900</a></li>
+            <li>Envíos a todo el Perú</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Mateo Import. Todos los derechos reservados.</span>
+        <span>Diseñado para compras rápidas por WhatsApp</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
