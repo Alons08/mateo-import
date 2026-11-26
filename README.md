@@ -1,4 +1,4 @@
-# Mateo Import. — Sitio Web Estático
+# Mateo Import. — Sitio Web
 
 Tienda web responsiva para **Mateo Import.** (**Dijes**, **Aretes**, **Aretes Modelo** y **Pulseras**) con carrito de compras persistente, envío directo de pedidos por WhatsApp al **+51 931 088 900**, tiendas físicas en Cercado de Lima y envíos a todo el Perú.
 
